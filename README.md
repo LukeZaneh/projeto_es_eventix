@@ -1,5 +1,5 @@
 # projeto_es_eventix
-Um sistema de compra e venda de ingresso construído para facilitar a compra e venda de ingressos de forma online na cidade de Lavras-MG.
+Um sistema de compra e venda de ingresso construído para facilitar a compra e venda de ingressos de forma online na cidade de Lavras-MG, tendo em vista que atualmente as vendas de ingresso estão distribuídas em poucos sistemas, com altas taxas, dificultando assim a compra por parte de muitos usuários. Com isso, o Eventix tem a finalidade de diminuir esses problemas, sendo um sistema totalmente isento de taxas, com boa usabilidade e desempenho para contemplar grande parte dos interessados em eventos na cidade.
 
 # Integrantes
 - André Ulhoa Werneck
