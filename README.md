@@ -7,7 +7,14 @@ Um sistema de compra e venda de ingresso construído para facilitar a compra e v
 - Maria Clara Souza Rosa
 
 # Descrição
-O sistema tem cadastro de usuário e tela de login e uma aba de pedidos feitos, além da página de compra e venda de ingressos. O sistema tem dois tipos de usuário: o Administrador e o Usuário comum; O administrador vai fazer a mediação entre a compra e a venda dos ingressos e ele é capaz de cadastrar eventos. O usuário comum conseguirá entrar no sistema para comprar e vender ingressos.
+O sistema de venda de ingressos para festas oferece uma abordagem abrangente, permitindo que organizadores, vendedores e clientes participem ativamente do processo. Todo o processo do sistema deve ser feito de forma autenticada, a fim de um melhor controle de permissões para cada usuário autenticado. 
+
+Com uma interface simples, os organizadores podem cadastrar facilmente seus eventos, personalizando detalhes e realizando as possíveis alterações e adaptações, caso necessário.
+
+Para ampliar a rede de venda, vendedores podem se cadastrar no sistema, tornando-se parceiros na comercialização de ingressos de eventos específicos. Essa funcionalidade proporciona uma abordagem colaborativa, permitindo que vendedores ampliem seu alcance.
+
+E a plataforma não se limita aos bastidores, pois oferece também aos próprios clientes a possibilidade de explorar eventos, visualizar opções de ingressos e efetuar compras de forma direta.
+
 
 # Tecnologias utilizadas
 - Java Spring Boot
