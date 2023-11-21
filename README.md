@@ -17,6 +17,6 @@ E a plataforma não se limita aos bastidores, pois oferece também aos próprios
 
 
 # Tecnologias utilizadas
-- Node (versão 16.17.0)
+- Node (versão 20.1.0)
 - React (versão 18.2.0)
 - Elephant SQL (versão 12.0)
