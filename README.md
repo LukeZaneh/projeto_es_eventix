@@ -20,17 +20,18 @@ O código-fonte ficará na pasta src, separados pelas pastas backend e frontend.
 Exemplo de estrutura
 
 |
-|
-
-|--backend
-
-|    -src
 
 |
 
-|--frontend
+| -- backend
 
-|   -src
+|     -src
+
+|
+
+| -- frontend
+
+|     -src
 
 |
 
