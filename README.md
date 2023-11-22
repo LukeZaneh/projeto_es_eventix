@@ -14,7 +14,18 @@ Com uma interface simples, os organizadores podem cadastrar facilmente seus even
 Para ampliar a rede de venda, vendedores podem se cadastrar no sistema, tornando-se parceiros na comercialização de ingressos de eventos específicos. Essa funcionalidade proporciona uma abordagem colaborativa, permitindo que vendedores ampliem seu alcance.
 
 E a plataforma não se limita aos bastidores, pois oferece também aos próprios clientes a possibilidade de explorar eventos, visualizar opções de ingressos e efetuar compras de forma direta.
+# Estrutura do diretorio
+O código-fonte ficará na pasta src, separados pelas pastas backend e frontend. A pasta backend contém os arquivos do lado do servidor enquanto a pasta frontend contém os arquivos do lado do cliente na aplicação.
 
+Exemplo de estrutura
+|
+|
+|--backend
+|    -src
+|
+|--frontend
+|   -src
+|
 
 # Tecnologias utilizadas
 - Node (versão 20.1.0)
