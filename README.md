@@ -18,13 +18,20 @@ E a plataforma não se limita aos bastidores, pois oferece também aos próprios
 O código-fonte ficará na pasta src, separados pelas pastas backend e frontend. A pasta backend contém os arquivos do lado do servidor enquanto a pasta frontend contém os arquivos do lado do cliente na aplicação.
 
 Exemplo de estrutura
+
 |
 |
+
 |--backend
+
 |    -src
+
 |
+
 |--frontend
+
 |   -src
+
 |
 
 # Tecnologias utilizadas
