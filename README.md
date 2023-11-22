@@ -35,6 +35,9 @@ Exemplo de estrutura
 
 |
 
+# Regras de Uso
+Os commits devem ser feitos diretamente na branch main, sempre que um desenvolvedor estiver fazendo uma tarefa cadastrada no kanban do próprio GitHub na aba Projetos. Os códigos ficam na pasta 'src', a documentação está dividida entre as pastas 'Requisitos' e 'Padrões Adotados'.
+
 # Tecnologias utilizadas
 - Node (versão 20.1.0)
 - React (versão 18.2.0)
