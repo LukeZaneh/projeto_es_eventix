@@ -14,7 +14,8 @@ Com uma interface simples, os organizadores podem cadastrar facilmente seus even
 Para ampliar a rede de venda, vendedores podem se cadastrar no sistema, tornando-se parceiros na comercialização de ingressos de eventos específicos. Essa funcionalidade proporciona uma abordagem colaborativa, permitindo que vendedores ampliem seu alcance.
 
 E a plataforma não se limita aos bastidores, pois oferece também aos próprios clientes a possibilidade de explorar eventos, visualizar opções de ingressos e efetuar compras de forma direta.
-# Estrutura do diretorio
+
+# Estrutura do diretório
 O código-fonte ficará na pasta src, separados pelas pastas backend e frontend. A pasta backend contém os arquivos do lado do servidor enquanto a pasta frontend contém os arquivos do lado do cliente na aplicação.
 
 Exemplo de estrutura
@@ -26,14 +27,24 @@ Exemplo de estrutura
 | -- backend
 
 |     -src
-
+|       - routes
+|           - eventoRoutes
+|       - controller
+|             - eventoController
+|       - services
+|             - eventoServices
+|       - persistence
+|             - BD
+|             - eventoPersistence
 |
-
 | -- frontend
-
-|     -src
-
 |
+|     -src
+|
+|
+
+# Boas Práticas
+Será usado o princípio SOLID para que o código seja escalável, de fácil manutenção e preparado para receber testes. O código deve ter comentários que devem ser sucintos e de fácil entendimento e devem ser constantemente revisados. O sistema também terá documentação com os padrões adotados, documento de requisitos, como utilizar o sistema, entre outros. Os nomes das variáveis precisam ser diretos e de fácil entendimento, os métodos devem ser declarados como ações, por exemplo, "getVendas", "calcularPreco", etc. As funções devem ter uma única responsabilidade, realizando apenas uma ação. As classes também devem seguir o princípio da Responsabilidade Única, devem realizar somente aquilo que estiver dentro do contexto daquela classe. Os métodos também devem ser de fácil reutilização e manutenção, usando de princípios como herança e sobrecarga de método. O código também deve ter tratamento de erros, com blocos try-catch para capturar as exceções.
 
 # Regras de Uso
 Os commits devem ser feitos diretamente na branch main, sempre que um desenvolvedor estiver fazendo uma tarefa cadastrada no kanban do próprio GitHub na aba Projetos. Os códigos ficam na pasta 'src', a documentação está dividida entre as pastas 'Requisitos' e 'Padrões Adotados'.
