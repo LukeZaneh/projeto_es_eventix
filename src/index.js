@@ -1,11 +1,8 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import eventosRouter from './routes/eventosRouter.js'
-<<<<<<< HEAD
 import compradoresRouter from './routes/compradoresRouter.js'
-=======
-import  cors from'cors';
->>>>>>> 8bc92c04a65c5bfcca1ea13f150bb2af68809347
+import  cors from 'cors';
 
 const app = express()
 
