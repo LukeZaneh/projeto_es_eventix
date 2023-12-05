@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import eventosRouter from './routes/eventosRouter.js'
+import compradoresRouter from './routes/compradoresRouter.js'
 
 const app = express()
 
@@ -11,6 +12,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.use("/eventos", eventosRouter)
+app.use("/compradores", compradoresRouter)
 
 app.listen(3000, mensagemServidor)
 

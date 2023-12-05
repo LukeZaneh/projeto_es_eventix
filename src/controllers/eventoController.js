@@ -1,4 +1,4 @@
-import eventoServices from '../../services/eventoServices.js'
+import eventoServices from '../services/eventoServices.js'
 
 async function getTodosEventos(req, res){
     // capturar os dados
