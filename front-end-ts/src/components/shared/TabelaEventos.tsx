@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
    
@@ -18,39 +20,37 @@ import Button from "../ui/Button";
     },
   ];
    
-  const TABLE_HEAD = ["Nome do Evento", "Local do Evento", "Cidade", "Estado", "Data", "Hora", "Número de Ingressos", "Valor do Ingresso", "Ações"];
+  const TABLE_HEAD = ["Id","Nome do Evento", "Data", "Hora",  "Local do Evento","Ações"];
    
-  const DadosEventos = [
-    {
-      nomeEvento: 'Evento 1',
-      localEvento: 'Local 1',
-      cidade: 'Cidade 1',
-      estado: 'Estado 1',
-      data: '01/01/2023',
-      hora: '18:00',
-      numeroIngressos: '100',
-      valorIngresso: '20.00',
-    },
-    {
-      nomeEvento: 'Evento 2',
-      localEvento: 'Local 2',
-      cidade: 'Cidade 2',
-      estado: 'Estado 2',
-      data: '02/01/2023',
-      hora: '20:00',
-      numeroIngressos: '150',
-      valorIngresso: '25.00',
-    },
-    // Adicione mais eventos conforme necessário
-  ];
+
   
   export function TabelaEventos() {
     const navigate = useNavigate()
-
-    function registerVendor(){
+    const [eventos, setEventos] = useState(null);
+    useEffect(() => {
+      // Função assíncrona para realizar a requisição GET
+  
+  
+      fetchData();
+  
+    }, []);
+    const fetchData = async () => {
+      try {
+        // Substitua a URL abaixo pela URL real do seu backend
+        const resposta = await axios.get('http://localhost:3000/eventos');
+ 
+        setEventos(resposta.data);
+      } catch (erro) {
+        console.error('Erro ao buscar dados do backend:', erro);
+      }
+    };
+    function openVendorModal(){
         navigate('/novo-evento')
     }
-
+    async function removerEvento(evento){
+      const result = await axios.delete(`http://localhost:3000/eventos/${evento.id}`);
+      fetchData();
+    }
     return (
         <div className="overflow-y-auto my-15">
         
@@ -59,7 +59,7 @@ import Button from "../ui/Button";
       <Button
                         type="button"
                         title="Novo Cadastro"
-                        onClick={registerVendor}
+                        onClick={openVendorModal}
                         variant="btn btn-outline btn-warning"
                     />       
        
@@ -73,18 +73,15 @@ import Button from "../ui/Button";
         </tr>
       </thead>
       <tbody>
-        {DadosEventos.map((evento, index) => (
+        {eventos && eventos.map((evento, index) => (
             <tr key={index}>
-                <td className="text-black">{evento.nomeEvento}</td>
-                <td className="text-black">{evento.localEvento}</td>
-                <td className="text-black">{evento.cidade}</td>
-                <td className="text-black">{evento.estado}</td>
+              <td className="text-black">{evento.id}</td>
+                <td className="text-black">{evento.nome}</td>
                 <td className="text-black">{evento.data}</td>
-                <td className="text-black">{evento.hora}</td>
-                <td className="text-black">{evento.numeroIngressos}</td>
-                <td className="text-black">{evento.valorIngresso}</td>
+                <td className="text-black">{evento.horario}</td>
+                <td className="text-black">{evento.local}</td>
                 <td>
-                <button className="btn btn-outline btn-error btn-xs">remover</button>
+                <button onClick={()=>removerEvento(evento)} className="btn btn-outline btn-error btn-xs">remover</button>
                 </td>
             </tr>
             ))}

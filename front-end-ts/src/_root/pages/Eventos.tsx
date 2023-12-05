@@ -1,11 +1,15 @@
+import TabelaVendas from "../../components/shared/TabelaVendas"
 
 const Eventos = () => {
     return (
+        <div>
         <div className="p-10 ml-4 text-black">
             <div>
-                <h2>Eventos</h2>
+                <TabelaVendas />
             </div>
         </div>
+        
+    </div>
     )
 }
 
