@@ -18,7 +18,6 @@ import axios from "axios";
     }, []);
     const fetchData = async () => {
       try {
-        // Substitua a URL abaixo pela URL real do seu backend
         const resposta = await axios.get('http://localhost:3000/eventos');
  
         setEventos(resposta.data);
