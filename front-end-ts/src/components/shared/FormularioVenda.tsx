@@ -9,9 +9,7 @@ const FormularioVenda: React.FC = () => {
     },
     validationSchema: Yup.object({
       idEvento: Yup.string().required('O nome do evento é obrigatório'),
-      CPF: Yup.string().required('O CPF do vendedor é obrigatório'),
-      email: Yup.string().required('A email é obrigatória'),
-      celular: Yup.string().required('O celular é obrigatório'),
+      idVendedor: Yup.string().required('O nome do evento é obrigatório'),
     }),
     onSubmit: values => {
       // Lógica para lidar com os dados do formulário

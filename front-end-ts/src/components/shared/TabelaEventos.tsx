@@ -3,22 +3,6 @@ import Button from "../ui/Button";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-
-   
-  const TABS = [
-    {
-      label: "All",
-      value: "all",
-    },
-    {
-      label: "Monitored",
-      value: "monitored",
-    },
-    {
-      label: "Unmonitored",
-      value: "unmonitored",
-    },
-  ];
    
   const TABLE_HEAD = ["Id","Nome do Evento", "Data", "Hora",  "Local do Evento","Ações"];
    
@@ -28,9 +12,7 @@ import axios from "axios";
     const navigate = useNavigate()
     const [eventos, setEventos] = useState(null);
     useEffect(() => {
-      // Função assíncrona para realizar a requisição GET
-  
-  
+      
       fetchData();
   
     }, []);
