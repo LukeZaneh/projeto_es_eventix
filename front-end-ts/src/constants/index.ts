@@ -2,22 +2,22 @@ export const sidebarLinks = [
     
     {
         imgUrl: "/assets/icons/event.svg",
-        route: "/eventos",
+        routeVendor: "/eventos",
+        routeAdmin: "/cadastro-eventos",
         label: "Eventos",
+        labelAdmin: "Eventos",//compras
     },
     {
         imgUrl: "/assets/icons/file-chart.svg",
-        route: "/vendas",//compras
+        routeVendor: "/vendas",
+        routeAdmin: "/vendedores",
         label: "Vendas",//compras
+        labelAdmin: "Vendedores",//compras
     },
 ]
 
 export const homeOptions = [
-    {
-        imgUrl: "/assets/icons/profile-adm.svg",
-        route: "/eventos",
-        label: "Administrador"
-    },
+  
     {
         imgUrl: "/assets/icons/organizer.svg",
         route: "/cadastro-eventos",

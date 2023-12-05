@@ -1,15 +1,17 @@
-import { NavLink, useNavigate } from "react-router-dom"
-import { sidebarLinks } from "../../constants"
-import { INavLink } from "../../types"
-import Button from "../ui/Button"
+import { NavLink, useNavigate } from "react-router-dom";
+import { sidebarLinks } from "../../constants";
+import { INavLink } from "../../types";
+import Button from "../ui/Button";
+import  {useOrganizer}  from "../../_root/context/OrganizerContext";
 
 const LeftSideBar = () => {
-
+    const { organizer, setOrganizer } =  useOrganizer();
     // --------------------------
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const handleClick = () => {
         navigate('/')
+        setOrganizer(null)
     }
     // ---------------------------
     // Usar a função acima para apontar para um endereço.
@@ -38,25 +40,29 @@ const LeftSideBar = () => {
                         Clara Martins
                     </h2>
                 </div>
-                <ul className="flex flex-col mt-10 gap-1">
-                    {sidebarLinks.map((link: INavLink) => {
-                        return (
-                            <li key={link.label} className="leftsidebar-link text-black">
-                                <NavLink
-                                    to={link.route}
-                                    className="flex gap-4 items-center p-4"
-                                >
-                                    <img
-                                        src={link.imgUrl}
-                                        alt={link.label}
-                                    />
-                                    {link.label}
-                                </NavLink>
-                            </li>
-                        )
-                    })}
-                </ul>
+                {organizer!==null && (
+                        <ul className="flex flex-col mt-10 gap-1">
+                        {sidebarLinks.map((link: INavLink) => {
+                            return (
+                                <li key={link.label} className="leftsidebar-link text-black">
+                                    <NavLink
+                                        to={organizer ? link.routeAdmin : link.routeVendor}
+                                        className="flex gap-4 items-center p-4"
+                                    >
+                                        <img
+                                            src={link.imgUrl}
+                                            alt={link.label}
+                                        />
+                                        {organizer ? link.labelAdmin : link.label}
+                                    </NavLink>
+                                </li>
+                            )
+                        })}
+                    </ul>
 
+
+                )}
+                
                 <div className="flex px-6 py-10 flex-col justify-between mt-12">
                     <Button
                         type="button"

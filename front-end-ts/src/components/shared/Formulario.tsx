@@ -166,7 +166,7 @@ const Form: React.FC = () => {
         ) : null}
       </div>
 
-      <button type="submit">Enviar</button>
+      <button className='border-gray-300 border rounded-md ml-5 mb-2 px-10' type="submit">Enviar</button>
     </form>
   );
 };

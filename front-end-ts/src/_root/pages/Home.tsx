@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom"
 import { homeOptions } from "../../constants"
+import {  useOrganizer } from "../context/OrganizerContext";
 
 const Home = () => {
+    const {setOrganizer} = useOrganizer();
+    
+    function handleVerifyClick(option: { imgUrl: string; route: string; label: string }){
+        setOrganizer(option.label == "Organizador")
+    }
+
     return (
         <div className="text-black">
             <div className="flex p-8 ml-4">
@@ -15,6 +22,7 @@ const Home = () => {
                     {homeOptions.map((option) => (
                         <div key={option.label} className="flex gap-3 p-20 ml-20 hover:bg-primary cursor-pointer rounded-lg">
                             <Link
+                                onClick={()=> handleVerifyClick(option)}
                                 to={option.route}
                                 className="flex-center flex-col gap-5"
                             >

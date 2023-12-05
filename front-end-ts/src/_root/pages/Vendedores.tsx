@@ -1,6 +1,12 @@
+import { VendorTable } from "../../components/VendorTable/VendorTable"
+
 const Vendedores = () => {
   return (
-    <div>Vendedores</div>
+  <>
+        <div>Vendedores</div>
+        <VendorTable />
+  </>
+    
   )
 }
 
