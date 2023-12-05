@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Button from "../ui/Button";
+import CadastrarVenda from "../../_root/pages/CadastrarVenda";
 
 
    
@@ -18,28 +18,23 @@ import Button from "../ui/Button";
     },
   ];
    
-  const TABLE_HEAD = ["Nome do Evento", "Local do Evento", "Cidade", "Estado", "Data", "Hora", "Número de Ingressos", "Valor do Ingresso", "Ações"];
+  const TABLE_HEAD = ["id","Nome do Evento", "Data", "Hora", "Local do Evento", "Ações"];
    
   const DadosEventos = [
     {
+      idEvento:'0',
       nomeEvento: 'Evento 1',
-      localEvento: 'Local 1',
-      cidade: 'Cidade 1',
-      estado: 'Estado 1',
       data: '01/01/2023',
       hora: '18:00',
-      numeroIngressos: '100',
-      valorIngresso: '20.00',
+      localEvento: 'Local 1',
     },
     {
+      idEvento:'1',
       nomeEvento: 'Evento 2',
-      localEvento: 'Local 2',
-      cidade: 'Cidade 2',
-      estado: 'Estado 2',
       data: '02/01/2023',
       hora: '20:00',
-      numeroIngressos: '150',
-      valorIngresso: '25.00',
+      localEvento: 'Local 2',
+
     },
     // Adicione mais eventos conforme necessário
   ];
@@ -48,24 +43,16 @@ import Button from "../ui/Button";
     const navigate = useNavigate()
 
     function registerVendor(){
-        navigate('/novo-evento')
+      document.getElementById('my_modal_1')?.showModal();
     }
 
     return (
         <div className="overflow-y-auto my-15">
         
       <div className="flex justify-between items-center mb-4">
-      <h2 className="h3-bold text-black mt-3">Listagem de Vendas</h2>
-      <Button
-                        type="button"
-                        title="Novo Cadastro"
-                        onClick={registerVendor}
-                        variant="btn btn-outline btn-warning"
-                    />       
-       
+      <h2 className="h3-bold text-black mt-3">Lista de Eventos Disponiveis</h2>       
       </div>
       <table className="table">
-      {/* head */}
       <thead>
         <tr>
           {TABLE_HEAD.map((header, index) => (
@@ -76,16 +63,16 @@ import Button from "../ui/Button";
       <tbody>
         {DadosEventos.map((evento, index) => (
             <tr key={index}>
+              <td className="text-black">{evento.idEvento}</td>
                 <td className="text-black">{evento.nomeEvento}</td>
-                <td className="text-black">{evento.localEvento}</td>
-                <td className="text-black">{evento.cidade}</td>
-                <td className="text-black">{evento.estado}</td>
                 <td className="text-black">{evento.data}</td>
                 <td className="text-black">{evento.hora}</td>
-                <td className="text-black">{evento.numeroIngressos}</td>
-                <td className="text-black">{evento.valorIngresso}</td>
+                <td className="text-black">{evento.localEvento}</td>
                 <td>
-                <button className="btn btn-outline btn-error btn-xs">remover</button>
+                <button 
+                        title="Novo Cadastro"
+                        onClick={registerVendor}
+                         className="btn btn-outline btn-error btn-xs">Cadastrar Venda</button>
                 </td>
             </tr>
             ))}
@@ -99,6 +86,17 @@ import Button from "../ui/Button";
         </tr>
       </tfoot>
     </table>
+    <dialog id="my_modal_1" className="modal">
+  <div className="modal-box">
+    <CadastrarVenda/>
+    <div className="modal-action">
+      <form method="dialog">
+    
+        <button className="btn">Fechar</button>
+      </form>
+    </div>
+  </div>
+</dialog>
       </div>
     );
   }

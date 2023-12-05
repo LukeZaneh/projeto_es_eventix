@@ -1,9 +1,11 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import eventosRouter from './routes/eventosRouter.js'
+import  cors from'cors';
 
 const app = express()
 
+app.use(cors());
 //converte objeto request no formato JSON
 app.use(express.json())
 

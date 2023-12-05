@@ -10,6 +10,7 @@ import NovoEvento from './_root/pages/NovoEvento'
 import { OrganizerContextProvider } from './_root/context/OrganizerContext'
 import Vendedores from './_root/pages/Vendedores'
 import CadastroVendedores from './_root/pages/CadastroVendedores'
+import CadastrarVenda from './_root/pages/CadastrarVenda'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path='/vendedores' element={<Vendedores />} />
             <Route path='/novo-evento' element={<NovoEvento />} />
             <Route path='/cadastro-vendedor' element={<CadastroVendedores/>} />
+            <Route path='/cadastro-venda' element={<CadastrarVenda/>} />
           </Route>
         </Routes>
       </OrganizerContextProvider>
